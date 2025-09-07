@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Forms</title>
+  </head>
+  <body>
+    <h1>Django Forms</h1>
+    <form action="{% url 'register' %}" method="post">
+      {% comment %} {{ ... }}: This is the standard Django template syntax for
+      outputting the value of a variable. form: This is the form instance
+      variable you passed from your view's context. .as_p: This is a method on
+      the form instance that renders each form field (including its label,
+      widget, errors, and help text) wrapped in a paragraph (
+      <p>
+        ) tag. {% endcomment %} {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Register</button>
+      </p>
+    </form>
+  </body>
+</html>
